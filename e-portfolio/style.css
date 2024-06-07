@@ -1,0 +1,317 @@
+nav {
+    width: 100%; /* La barre de navigation occupe toute la largeur */
+    position: fixed; /* Fixe la navigation */
+    top: 0; /* Positionne la navigation en haut de la page */
+    z-index: 1000; /* S'assure que la navigation reste au-dessus des autres éléments */
+    background-color: #0066cc; /* Couleur de fond  */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f2ff; /* Nuance de bleu clair */
+
+}
+
+.header-images {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-images img {
+    width: 33.17%; /* Chaque image prend presque la moitié de la largeur */
+    opacity: 0.45; /* Effet de fondu */
+   
+    display: inline-block; /* Permet aux images de s'aligner horizontalement */
+    vertical-align: middle; /* Alignement vertical */
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
+
+.header-text {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #330033; /* Couleur foncée (gris très sombre) */
+    font-size: 130px; /* Taille du texte */
+    font-family: 'Knewave', cursive; /* Police originale et distinctive */
+    text-align: center;
+	white-space: nowrap;
+	
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    background-color: #0066cc; /* Bleu moyen */
+    text-align: center;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 100px; /* Augmente l'espace entre les éléments */
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+nav ul li a:hover, nav ul li a:active {
+    color: #ffcc00; /* Change la couleur lors du survol et du clic */
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #003366; /* Bleu foncé */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+#about {
+    display: flex;
+    align-items: center; /* Alignement vertical des éléments */
+    justify-content: center; /* Alignement horizontal */
+    padding: 0px;
+}
+
+.about-text, .about-image {
+    flex: 1; /* Chaque élément prend la moitié de l'espace disponible */
+    padding: 10px;
+}
+
+.about-image img {
+    width: 40%; /* Réduit la largeur de l'image à 40% de sa colonne */
+    height: auto; /* Garde le ratio de l'image */
+    display: block; /* Rend l'image en bloc pour permettre le centrage */
+    margin: auto; /* Centre l'image horizontalement dans sa colonne */
+}
+
+#skills {
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+	gap: 60px;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px; /* Largeur fixe pour chaque compétence */
+    height: 180px; /* Hauteur fixe pour aligner les noms */
+    margin: 15px; /* Marge autour de chaque compétence */
+}
+
+.skill img {
+    width: 80px; /* Largeur fixe des logos */
+    height: 74px; /* Hauteur fixe des logos */
+    margin-bottom: 10px; /* Espace entre le logo et le nom */
+}
+
+.skill p {
+    margin: 0;
+    flex-grow: 1; /* Permet d'aligner le texte en bas si nécessaire */
+}
+
+
+
+#projects h2 {
+    text-align: center;
+}
+
+
+.project {
+    flex-grow: 1; /* Permet au projet de remplir l'espace disponible */
+    flex-basis: 0; /* Ajuste la base de flexion à zéro pour que flex-grow fonctionne correctement */
+    margin-bottom: 20px;
+    display: flex; /* Utilisé pour aligner l'image et la description */
+    padding: 20px; /* Réduit l'espacement autour du projet */
+}
+
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; /* Aligne les éléments au début de l'axe transversal */
+}
+
+
+
+
+.project img {
+	width: 50%; /* Réduit la largeur de l'image à 40% de sa colonne */
+    height: auto; /* Garde le ratio de l'image */
+    display: block; /* Rend l'image en bloc pour permettre le centrage */
+    margin: auto; /* Centre l'image horizontalement dans sa colonne */
+}
+
+
+
+.project img:hover {
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+.project-details {
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin-top: 10px;
+    display: none; /* Caché par défaut */
+}
+
+.project-description {
+    max-width: 50%; /* Ajustement pour la largeur de la description */
+}
+
+
+
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    perspective: 1000px; /* Profondeur de la perspective pour l'effet 3D */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flip-card:hover .flip-card-inner, .flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg); /* Rotation de la carte */
+}
+
+.flip-card-front, .flip-card-back {
+    position: relative;
+    width: 100%;
+	min-height: 150px; /* Hauteur minimale pour s'adapter au contenu */
+	backface-visibility: hidden; /* Cache l'arrière lorsqu'il n'est pas face à l'utilisateur */
+}
+
+.flip-card-back {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: #f4f4f4; /* Fond gris */
+    color: black;
+    transform: rotateY(180deg);
+    display: flex;
+	flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+
+.flip-card-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+
+.project .flip-card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Aligne les éléments horizontalement */
+    justify-content: center; /* Aligne les éléments verticalement */
+}
+
+#contact {
+    text-align: center;
+    padding: 50px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.cv-download a {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cv-download a:hover {
+    background-color: #45a049;
+}
+
+.contact-info p, .contact-info a {
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+#interests {
+    text-align: center;
+    padding: 50px;
+}
+
+.interests-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.interest h3 {
+    margin: 0;
+    color: #007bff; /* Couleur d'accentuation */
+}
+
+.interest p {
+    margin: 10px 0;
+}
+
+
+
